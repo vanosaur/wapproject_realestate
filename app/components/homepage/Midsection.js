@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-    MessageCircle, // Chat icon
-    ShieldCheck,   // Verified icon
-    Home,          // Home icon / Quality
-    Users,         // Users / Family
+    MessageCircle, 
+    ShieldCheck,   
+    Home,          
+    Users,         
     ArrowRight,
 } from 'lucide-react';
 
@@ -38,51 +38,48 @@ const Midsection = () => {
 
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {/* Direct Communication Card */}
+                    {/*  Card 1 */}
                     <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
-                        <MessageCircle className="w-12 h-12 text-blue-500 mb-4" />
-                        <h4 className="text-xl font-semibold text-gray-800 mb-2">Direct Communication</h4>
+                        <ShieldCheck className="w-12 h-12 text-blue-500 mb-4" />
+                        <h4 className="text-xl font-semibold text-gray-800 mb-2">Trusted Listings</h4>
                         <p className="text-gray-600 mb-4">
-                            Get instant responses from our experienced agents through our real-time chat
-                            system.
+                            Every property is carefully inspected and fully verified to guarantee authenticity and peace of mind.
                         </p>
                         <a href="#" className="text-blue-500 hover:text-blue-700 flex items-center gap-1.5 transition-colors">
                             Learn more <ArrowRight className="w-4 h-4" />
                         </a>
                     </div>
 
-                    {/* Verified Properties Card */}
+                    {/* Card 2 */}
                     <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
-                        <ShieldCheck className="w-12 h-12 text-green-500 mb-4" />
-                        <h4 className="text-xl font-semibold text-gray-800 mb-2">Verified Properties</h4>
+                        <MessageCircle className="w-12 h-12 text-green-500 mb-4" />
+                        <h4 className="text-xl font-semibold text-gray-800 mb-2">Real-Time Support</h4>
                         <p className="text-gray-600 mb-4">
-                            Every property is thoroughly inspected and verified to ensure quality and
-                            authenticity.
+                            Instantly connect with expert agents through seamless real-time chat support for quick, reliable assistance.
                         </p>
                         <a href="#" className="text-blue-500 hover:text-blue-700 flex items-center gap-1.5 transition-colors">
                             Learn more <ArrowRight className="w-4 h-4" />
                         </a>
                     </div>
 
-                    {/* Quality First Card */}
+                    {/* Card 3 */}
                     <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
-                        <Home className="w-12 h-12 text-yellow-500 mb-4" />
-                        <h4 className="text-xl font-semibold text-gray-800 mb-2">Quality First</h4>
-                        <p className="text-gray-600 mb-4">
-                            We maintain high standards for all properties, ensuring you get the best
-                            value.
-                        </p>
-                        <a href="#" className="text-blue-500 hover:text-blue-700 flex items-center gap-1.5 transition-colors">
-                            Learn more <ArrowRight className="w-4 h-4" />
-                        </a>
-                    </div>
-
-                    {/* Family Focused Card */}
-                    <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
-                        <Users className="w-12 h-12 text-purple-500 mb-4" />
+                        <Users className="w-12 h-12 text-yellow-500 mb-4" />
                         <h4 className="text-xl font-semibold text-gray-800 mb-2">Family Focused</h4>
                         <p className="text-gray-600 mb-4">
-                            Find homes that perfectly match your family needs and lifestyle preferences.
+                            Explore homes thoughtfully designed to suit your family's unique needs, lifestyle, and future aspirations.
+                        </p>
+                        <a href="#" className="text-blue-500 hover:text-blue-700 flex items-center gap-1.5 transition-colors">
+                            Learn more <ArrowRight className="w-4 h-4" />
+                        </a>
+                    </div>
+
+                    {/* Card 4 */}
+                    <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
+                        <Home className="w-12 h-12 text-purple-500 mb-4" />
+                        <h4 className="text-xl font-semibold text-gray-800 mb-2">Premium Quality Homes</h4>
+                        <p className="text-gray-600 mb-4">
+                            We uphold the highest standards, ensuring you access only the finest properties with unmatched value.
                         </p>
                         <a href="#" className="text-blue-500 hover:text-blue-700 flex items-center gap-1.5 transition-colors">
                             Learn more <ArrowRight className="w-4 h-4" />

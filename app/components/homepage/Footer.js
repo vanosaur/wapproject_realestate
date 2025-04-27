@@ -12,7 +12,7 @@ function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Logo and Description */}
                     <div className="flex flex-col gap-4">
-                        <div className="text-xl font-bold text-gray-800">
+                        <div className="text-xl font-bold text-white-500 ">
                             BuildEstate
                         </div>
                         <p className="text-gray-600">
@@ -32,9 +32,9 @@ function Footer() {
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+                    
                     <div>
-                        <h4 className="text-lg font-semibold text-gray-800 mb-4">Quick Links</h4>
+                        <h4 className="text-lg font-semibold text-white-500 mb-4">Quick Links</h4>
                         <ul className="space-y-2">
                             <li>
                                 <a href="#" className="text-gray-600 hover:text-blue-500">
@@ -64,9 +64,9 @@ function Footer() {
                         </ul>
                     </div>
 
-                    {/* Support */}
+                    
                     <div>
-                        <h4 className="text-lg font-semibold text-gray-800 mb-4">Support</h4>
+                        <h4 className="text-lg font-semibold text-white-500 mb-4">Support</h4>
                         <ul className="space-y-2">
                             <li>
                                 <a href="#" className="text-gray-600 hover:text-blue-500">
@@ -93,7 +93,7 @@ function Footer() {
 
                     {/* Contact Us */}
                     <div>
-                        <h4 className="text-lg font-semibold text-gray-800 mb-4">Contact Us</h4>
+                        <h4 className="text-lg font-semibold text-white-500 mb-4">Contact Us</h4>
                         <p className="text-gray-600">
                             123 Property Plaza, Silicon Valley, CA 94088
                         </p>
@@ -107,7 +107,7 @@ function Footer() {
 
                     {/* Stay Updated */}
                     <div>
-                        <h4 className="text-lg font-semibold text-gray-800 mb-4">Stay Updated</h4>
+                        <h4 className="text-lg font-semibold text-white-500 mb-4">Stay Updated</h4>
                         <p className="text-gray-600 mb-4">
                             Subscribe to our newsletter for the latest property listings and real estate
                             insights.

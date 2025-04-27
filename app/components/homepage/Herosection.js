@@ -30,19 +30,19 @@ export default function HeaderAndHero() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Optional overlay for readability */}
+      {/* overlay */}
       <div className="absolute inset-0 bg-black/50 z-[-1]"></div>
 
       {/* Header Section */}
-      <nav className="fixed top-0 w-full flex justify-between items-center px-8 py-4 bg-black/40 backdrop-blur-md z-50"> {/* Increased z-index to 50 */}
+      <nav className="fixed top-0 w-full flex justify-between items-center px-8 py-4 bg-black/40 backdrop-blur-md z-50"> 
         <div className="flex items-center space-x-2">
-          <span className="text-white-600 text-xl font-bold">🏠 Houz X</span>
+          <span className="text-white-600 text-xl font-bold">UrbHaven</span>
         </div>
-        <div className="hidden md:flex items-center space-x-6 text-sm font-medium text-white-700">
+        <div className="hidden md:flex items-center space-x-6 text-lg font-medium text-white-700">
           <Link href="/">Home</Link>
           <Link href="/Properties">Properties</Link>
           <Link href="/about">About Us</Link>
-          <Link href="/Blog">Blog</Link>
+          <Link href="/blog">Blog</Link>
           <Link href="/Contact">Contact</Link>
         </div>
         <div className="flex items-center space-x-4">
@@ -55,10 +55,10 @@ export default function HeaderAndHero() {
       <div className="relative h-[825px] w-full flex items-center justify-center text-center z-10">
         <div className="relative z-10 flex flex-col items-center text-white">
           <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text mb-4">
-            Find Your Perfect <br /> Living Space
+          Your Next Chapter <br /> Starts Here
           </h1>
           <p className="text-lg mb-8 max-w-xl">
-            Discover your dream home in the most sought-after locations
+          Find your perfect home in the most desirable neighborhoods
           </p>
           <SearchBar />
         </div>
