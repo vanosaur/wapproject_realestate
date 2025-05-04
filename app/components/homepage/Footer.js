@@ -13,7 +13,7 @@ function Footer() {
                     {/* Logo and Description */}
                     <div className="flex flex-col gap-4">
                         <div className="text-xl font-bold text-white-500 ">
-                            BuildEstate
+                            UrbHaven
                         </div>
                         <p className="text-gray-600">
                             Your trusted partner in finding the perfect home. We make property hunting
@@ -56,9 +56,9 @@ function Footer() {
                                     Contact
                                 </a>
                             </li>
-                             <li>
+                            <li>
                                 <a href="#" className="text-gray-600 hover:text-blue-500">
-                                    AI Property Hub
+                                    Blog
                                 </a>
                             </li>
                         </ul>
@@ -101,7 +101,7 @@ function Footer() {
                             +1 (234) 567-890
                         </p>
                         <p className="text-gray-600 mt-2">
-                            support@buildestate.com
+                            mail@urbhavennow.com
                         </p>
                     </div>
 
@@ -131,7 +131,7 @@ function Footer() {
 
                 {/* Bottom Row */}
                 <div className="flex flex-col md:flex-row items-center justify-between mt-8 text-sm text-gray-500">
-                    <p>© 2025 BuildEstate. All Rights Reserved.</p>
+                    <p>© 2025 UrbHaven. All Rights Reserved.</p>
                     <a href="#" className="text-blue-500 hover:text-blue-700 mt-4 md:mt-0 flex items-center gap-2">
                         Browse Our Properties
                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">

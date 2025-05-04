@@ -1,5 +1,8 @@
-import React from 'react';
+'use client'; // Only needed if you're using Next.js 13+ with the app directory
+
+import React, { useState } from 'react';
 import Link from 'next/link';
+import Navbar from './Navbar';
 
 function SearchBar() {
   return (
@@ -17,6 +20,8 @@ function SearchBar() {
 }
 
 export default function HeaderAndHero() {
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
   return (
     <section className="relative w-full">
       {/* Background video */}
@@ -34,37 +39,27 @@ export default function HeaderAndHero() {
       <div className="absolute inset-0 bg-black/50 z-[-1]"></div>
 
       {/* Header Section */}
-      <nav className="fixed top-0 w-full flex justify-between items-center px-8 py-4 bg-black/40 backdrop-blur-md z-50"> 
-        <div className="flex items-center space-x-2">
-          <span className="text-white-600 text-xl font-bold">UrbHaven</span>
-        </div>
-        <div className="hidden md:flex items-center space-x-6 text-lg font-medium text-white-700">
-          <Link href="/">Home</Link>
-          <Link href="/Properties">Properties</Link>
-          <Link href="/about">About Us</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/Contact">Contact</Link>
-        </div>
-        <div className="flex items-center space-x-4">
-          <button className="text-sm">Sign in</button>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm">Get started</button>
-        </div>
-      </nav>
+      <Navbar />
+      
 
       {/* Hero Section */}
       <div className="relative h-[825px] w-full flex items-center justify-center text-center z-10">
         <div className="relative z-10 flex flex-col items-center text-white">
-          <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text mb-4">
-          Your Next Chapter <br /> Starts Here
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white text-transparent mb-4">
+            Your Next Chapter <br /> Starts Here
           </h1>
           <p className="text-lg mb-8 max-w-xl">
-          Find your perfect home in the most desirable neighborhoods
+            Find your perfect home in the most desirable neighborhoods
           </p>
           <SearchBar />
         </div>
       </div>
+
+      
     </section>
   );
 }
+
+
 
 

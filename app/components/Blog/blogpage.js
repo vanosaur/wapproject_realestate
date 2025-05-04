@@ -1,6 +1,9 @@
+'use client';
+
 import React from 'react'
 import Link from 'next/link';
 import Footer from '../homepage/Footer';
+import Navbar from '../homepage/Navbar';
 import { Clock, User } from 'lucide-react'; 
 
 function Blogpage() {
@@ -50,22 +53,7 @@ function Blogpage() {
         ]
   return (
     <div>
-        <nav className="fixed top-0 w-full flex justify-between items-center px-8 py-4 bg-black/40 backdrop-blur-md z-50">
-        <div className="flex items-center space-x-2">
-          <span className="text-white-600 text-xl font-bold">UrbHaven</span>
-        </div>
-        <div className="hidden md:flex items-center space-x-6 text-lg font-medium text-white-700">
-          <Link href="/">Home</Link>
-          <Link href="/Properties">Properties</Link>
-          <Link href="/about">About Us</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/Contact">Contact</Link>
-        </div>
-        <div className="flex items-center space-x-4">
-          <button className="text-sm">Sign in</button>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm">Get started</button>
-        </div>
-      </nav>
+      <Navbar />
 
       <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -28,7 +28,7 @@ const Midsection = () => {
                     Our Strengths
                 </span>
                 <h2 className="text-4xl font-bold text-gray-900 mt-4 mb-4">
-                    Why Choose Us
+                    Why UrbHaven?
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-6 rounded-full"></div>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -86,12 +86,7 @@ const Midsection = () => {
                         </a>
                     </div>
                     </div>
-                    <div className="flex justify-center mt-12">
-                    <button className="bg-blue-600 text-white items-center px-6 py-3 rounded-full text-sm  flex gap-2">
-                        Browse Our Properties
-                        <ArrowRight className="w-4 h-4" />
-                    </button>
-                </div>
+                    
             </div>
         </section>
     );
