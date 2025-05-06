@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link';
 import Footer from '../homepage/Footer';
 import Navbar from '../homepage/Navbar';
-import { Clock, User } from 'lucide-react'; 
+import { Clock, User ,ArrowDown} from 'lucide-react'; 
 
 function Blogpage() {
     const blogPosts = [
@@ -68,14 +68,15 @@ function Blogpage() {
         </div>
 
         <div className='relative'>
-            <img src="/images/pexels-davidmcbee-1546168.jpg" alt="Vision" className="w-full h-[750] rounded-2xl mb-6" />
-            <div className="absolute inset-0 bg-black/48"></div>
+            <img src="/images/image copy 12.png" alt="Vision" className="w-750 h-[750] rounded-2xl mb-6" />
+            <div className="absolute inset-0 bg-black/50"></div>
             <div className="absolute inset-0 text-white px-4 justify-center text-right items-end flex flex-col">
                 <p className="text-5xl font-bold mb-8 leading-tight w-180 p-15">
                 Buying a home is one of the biggest decisions you'll ever make.
                  From setting a budget to choosing the right neighborhood,
                  here's everything you need to know to make the right choice.
                 </p>
+                <ArrowDown size={48} className='mr-25 mt-[-55]'/>
             </div>
         
         </div>
