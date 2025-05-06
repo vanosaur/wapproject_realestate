@@ -12,17 +12,43 @@ function contactpage() {
 
         <div className="flex flex-col items-center justify-center py-35 bg-blue-100">
         <div className="w-full max-w-lg bg-white p-8 rounded-lg shadow-md text-center">
-
             <h1 className="text-4xl font-bold mb-4 text-black">Contact Us</h1>
             <p className="text-lg mb-8 text-black">We'd love to hear from you!</p>
-            <form className="w-full max-w-md">
-                <input type="text" placeholder="Your Name" className="w-full p-2 mb-4 border rounded text-gray-500" />
-                <input type="email" placeholder="Your Email" className="w-full p-2 mb-4 border rounded text-gray-500" />
-                <textarea placeholder="Your Message" className="w-full p-2 mb-4 border rounded text-gray-500"></textarea>
-                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded text-gray-500">Send Message</button>
+            <form
+            action="https://formspree.io/f/mjkwwjzr" 
+            method="POST"
+            className="w-full max-w-md"
+            >
+            <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="w-full p-2 mb-4 border rounded text-gray-500"
+                required
+            />
+            <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                className="w-full p-2 mb-4 border rounded text-gray-500"
+                required
+            />
+            <textarea
+                name="message"
+                placeholder="Your Message"
+                className="w-full p-2 mb-4 border rounded text-gray-500"
+                required
+            ></textarea>
+            <button
+                type="submit"
+                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+                Send Message
+            </button>
             </form>
         </div>
         </div>
+
 
         <section className="bg-white py-26 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between">
             <div className="max-w-lg text-center md:text-left">
