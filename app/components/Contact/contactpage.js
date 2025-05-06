@@ -33,7 +33,7 @@ function contactpage() {
                 </p>
                 <div className="flex items-start mb-3 gap-3">
                 <MapPin className="mt-1 text-gray-800" />
-                <span className='text-black'>Ankersgade 12C, 1, 8000 Aarhus</span>
+                <span className='text-black'>Unit 503, Trade Tower, Magarpatta City, Hadapsar, Pune</span>
                 </div>
                 <div className="flex items-start mb-3 gap-3">
                 <Phone className="mt-1 text-gray-800" />

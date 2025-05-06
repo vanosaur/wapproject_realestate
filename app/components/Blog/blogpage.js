@@ -61,12 +61,15 @@ function Blogpage() {
         {/* Section Header */}
         <div className="text-center mb-16 mt-20">
           <h2 className="text-4xl font-bold mb-4 text-black">Our Blog Posts</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto" />
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-6 rounded-full"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Your Guide to Smarter Property Decisions
+            </p>
         </div>
 
         <div className='relative'>
-            <img src="/images/breno-assis-r3WAWU5Fi5Q-unsplash.jpg" alt="Vision" className="w-full h-[750] rounded-2xl mb-6" />
-            <div className="absolute inset-0 bg-black/50"></div>
+            <img src="/images/pexels-davidmcbee-1546168.jpg" alt="Vision" className="w-full h-[750] rounded-2xl mb-6" />
+            <div className="absolute inset-0 bg-black/48"></div>
             <div className="absolute inset-0 text-white px-4 justify-center text-right items-end flex flex-col">
                 <p className="text-5xl font-bold mb-8 leading-tight w-180 p-15">
                 Buying a home is one of the biggest decisions you'll ever make.
