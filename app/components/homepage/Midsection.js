@@ -9,9 +9,9 @@ import {
 
 const Midsection = () => {
   return (
-    <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 pb-26">
       {/* Trusted by Companies */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-26">
         <div className="bg-white rounded-xl shadow-lg px-6 py-10 sm:p-12 mx-auto max-w-6xl">
           <h1 className="text-xl font-bold text-gray-800 mb-6">
             Trusted by 200+ companies

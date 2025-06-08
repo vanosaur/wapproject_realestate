@@ -84,7 +84,7 @@ export default function FeaturedProperties() {
         },
       ];
   return (
-    <section className="bg-gray-50 pb-35">
+    <section className="bg-gray-50 pb-18">
       <div className="max-w-6xl mx-auto px-4 align">
         <div className='mb-8 items-center text-center'>
             <span className="bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide uppercase ">
