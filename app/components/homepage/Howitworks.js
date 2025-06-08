@@ -23,12 +23,7 @@ function Howitworks() {
             </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 lg:gap-16 relative">
-        {/* Connecting line */}
-        {/* <div className="hidden md:block absolute top-10 left-[20%] right-[20%] h-0.5 bg-gray-100">
-            <div className="absolute left-0 right-0 top-0 h-full">
-            <div className="h-full w-full bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500 bg-[length:200%] animate-[bg-pos-x_4s_linear_infinite]"></div>
-            </div>
-        </div> */}
+        
 
         {/* Step 1 */}
         <div className="relative flex flex-col items-center text-center">

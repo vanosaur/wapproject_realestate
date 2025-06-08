@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use } from 'react'
+import React, { useState } from 'react'
 import Navbar from '../homepage/Navbar'
 import { Mail, MapPin, Phone } from 'lucide-react';
 import Footer from '../homepage/Footer';

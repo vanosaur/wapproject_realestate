@@ -90,7 +90,7 @@ function Navbar() {
         </div>
         <div className="hidden md:flex items-center space-x-6 text-lg font-medium text-white">
           <Link href="/">Home</Link>
-          <Link href="/Properties">Properties</Link>
+          <Link href="/properties">Properties</Link>
           <Link href="/about">About Us</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/contact">Contact</Link>
