@@ -1,4 +1,4 @@
-'use client'; // Only needed if you're using Next.js 13+ with the app directory
+'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -20,13 +20,11 @@ function SearchBar() {
 }
 
 export default function HeaderAndHero() {
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-
   return (
     <section className="relative w-full">
-      {/* Background video */}
+      {/* Background Video */}
       <video
-        className="absolute inset-0 w-full object-cover z-[-1]"
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-2]"
         autoPlay
         loop
         muted
@@ -35,31 +33,24 @@ export default function HeaderAndHero() {
         Your browser does not support the video tag.
       </video>
 
-      {/* overlay */}
-      <div className="absolute inset-0 bg-black/50 z-[-1]"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60 z-[-1]" />
 
-      {/* Header Section */}
+      {/* Header */}
       <Navbar />
-      
 
       {/* Hero Section */}
-      <div className="relative h-[825px] w-full flex items-center justify-center text-center z-10">
-        <div className="relative z-10 flex flex-col items-center text-white">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white text-transparent mb-4">
+      <div className="relative w-full min-h-[90vh] flex items-center justify-center px-4 md:px-8 text-center z-10">
+        <div className="text-white flex flex-col items-center max-w-2xl w-full">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
             Your Next Chapter <br /> Starts Here
           </h1>
-          <p className="text-lg mb-8 max-w-xl">
+          <p className="text-base sm:text-lg mb-8 px-2">
             Find your perfect home in the most desirable neighborhoods
           </p>
           <SearchBar />
         </div>
       </div>
-
-      
     </section>
   );
 }
-
-
-
-

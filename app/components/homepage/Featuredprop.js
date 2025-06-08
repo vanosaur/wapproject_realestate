@@ -169,7 +169,7 @@ export default function FeaturedProperties() {
         </Swiper>
       </div>
       <div className="flex justify-center mt-12">
-                    <button className="bg-blue-600 text-white items-center px-6 py-3 rounded-full text-sm  flex gap-2">
+                    <button onClick={() => window.location.href = '/properties'}  className="bg-blue-600 text-white items-center px-6 py-3 rounded-full text-sm  flex gap-2 hover:bg-blue-700 transition-colors duration-300">
                         Browse Our Properties
                         <ArrowRight className="w-4 h-4" />
                     </button>

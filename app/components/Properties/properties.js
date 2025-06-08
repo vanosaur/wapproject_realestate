@@ -55,8 +55,9 @@ function Properties() {
     <div className='bg-gray-50'>
       <Navbar/>
       <div className='py-36'>
-        <h1 className=' text-5xl font-extrabold text-center text-black'>Find Your Ideal Property</h1>
-        <p className='text-gray-400 text-center text-xl mt-2'>Discover a curated collection of premium properties</p>
+        <h1 className=' text-5xl font-extrabold text-center text-black  mb-4'>Find Your Ideal Property</h1>
+        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-6 rounded-full"></div>
+        <p className='text-gray-500 text-center text-xl'>Discover a curated collection of premium properties</p>
       </div>
 
       <div className="container mx-auto px-4"> {/* Added a container for better centering */}

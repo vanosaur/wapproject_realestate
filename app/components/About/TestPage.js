@@ -37,22 +37,24 @@ function TestPage() {
       <div className="relative h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 z-0 opacity-60">
-       
-        <img src='/images/image copy 6.png'/>
-      
-        
+      <img
+        src="/images/image copy 6.png"
+        className="w-full h-full object-cover"/>
       </div>
 
       {/* Content */}
-      <div className="relative text-center text-white px-4 max-w-4xl mx-auto z-10">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 leading-tight">
-          Building Your Future,<br />One Home at a Time
-        </h1>
-        <p className="text-xl md:text-2xl leading-relaxed font-light">
-          We're more than just a property platform - we're your partner in finding the perfect place to call home.
-        </p>
-        <div className="w-24 h-1 bg-white mx-auto mt-8" />
-      </div>
+      <div className="relative text-center text-white px-4 max-w-5xl mx-auto z-10">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 sm:mb-8 leading-tight">
+        Building Your Future,
+        <br className="hidden sm:block" />
+        One Home at a Time
+      </h1>
+      <p className="text-lg sm:text-xl md:text-2xl leading-relaxed font-light text-white/90">
+        We're more than just a property platform — we're your partner in finding the perfect place to call home.
+      </p>
+      <div className="w-24 h-1 bg-white mx-auto mt-6 sm:mt-8 rounded-full" />
+    </div>
+
     </div>
 
     <section className="py-24 bg-gradient-to-b from-white to-gray-50">

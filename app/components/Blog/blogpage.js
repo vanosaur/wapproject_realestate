@@ -60,25 +60,35 @@ function Blogpage() {
         
         {/* Section Header */}
         <div className="text-center mb-16 mt-20">
-          <h2 className="text-4xl font-bold mb-4 text-black">Our Blog Posts</h2>
+          <h2 className="text-5xl font-extrabold mb-4 text-black">Our Blog Posts</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-6 rounded-full"></div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-500 text-center text-xl">
             Your Guide to Smarter Property Decisions
             </p>
         </div>
 
-        <div className='relative'>
-            <img src="/images/image copy 12.png" alt="Vision" className="w-750 h-[750] rounded-2xl mb-6" />
-            <div className="absolute inset-0 bg-black/50"></div>
-            <div className="absolute inset-0 text-white px-4 justify-center text-right items-end flex flex-col">
-                <p className="text-5xl font-bold mb-8 leading-tight w-180 p-15">
-                Buying a home is one of the biggest decisions you'll ever make.
-                 From setting a budget to choosing the right neighborhood,
-                 here's everything you need to know to make the right choice.
-                </p>
-                <ArrowDown size={48} className='mr-25 mt-[-55]'/>
-            </div>
-        
+        <div className="relative">
+          {/* Background Image */}
+          <img
+            src="/images/image copy 12.png"
+            alt="Vision"
+            className="w-full h-[750px] object-cover rounded-2xl mb-6"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50 rounded-2xl" />
+
+          {/* Text & Icon */}
+          <div className="absolute inset-0 text-white px-6 flex flex-col items-end justify-end text-right pb-12">
+            <p className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight max-w-2xl mb-6">
+              Buying a home is one of the biggest decisions you'll ever make.
+              <br />
+              From setting a budget to choosing the right neighborhood,
+              <br />
+              here's everything you need to know to make the right choice.
+            </p>
+            <ArrowDown size={36} className="mr-2 animate-bounce" />
+          </div>
         </div>
           
 
