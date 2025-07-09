@@ -7,8 +7,7 @@ import Image from 'next/image';
 import mockProperties from 'app/data/mockproperties';
 import PriceFilter from "app/components/Properties/PriceFilter";
 import dynamic from 'next/dynamic';
-import "leaflet/dist/leaflet.css";
-import "app/utils/fixLeafletIcon";
+
 
 const MapView = dynamic(() => import("app/components/Properties/MapView"), { ssr: false });
 
@@ -88,24 +87,29 @@ function Properties() {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-6 lg:gap-8">
+          {/* Left Column: Search + Filters */}
           <div>
             {/* Search Bar */}
-            <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
+            <div className="bg-white p-4 rounded-lg shadow-sm mb-4 w-full">
               <form className="relative" onSubmit={handleSearchSubmit}>
                 <input
                   type="text"
                   placeholder="Search by location, property type..."
-                  className="w-full pl-12 pr-20 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all text-gray-800 placeholder-gray-400"
+                  className="w-full pl-12 pr-20 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all text-sm sm:text-base text-gray-800 placeholder-gray-400"
                   value={searchText}
                   onChange={handleSearchChange}
                   onFocus={() => setShowSuggestions(true)}
                   onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
                 />
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center gap-2">
-                  <button type="submit" className="bg-blue-600 text-white px-4 py-1.5 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
-                    <Search className="h-4 w-4" /> Search
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 h-4 w-4 sm:h-5 sm:w-5" />
+                <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                  <button
+                    type="submit"
+                    className="bg-blue-600 text-white px-3 sm:px-4 py-1.5 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 text-sm sm:text-base"
+                  >
+                    <Search className="h-4 w-4" />
+                    <span className="hidden sm:inline">Search</span>
                   </button>
                 </div>
                 {showSuggestions && displayedSuggestions.length > 0 && (
@@ -118,7 +122,8 @@ function Properties() {
                           className="w-full text-left px-3 py-2 hover:bg-gray-50 rounded-md flex items-center gap-2 text-gray-700"
                           onClick={() => handleLocationClick(location)}
                         >
-                          <MapPin className="h-4 w-4 text-gray-400" /> {location}
+                          <MapPin className="h-4 w-4 text-gray-400" />
+                          {location}
                         </button>
                       ))}
                     </div>
@@ -145,11 +150,12 @@ function Properties() {
             </div>
           </div>
 
-          {/* Map */}
-          <div className="rounded-xl overflow-hidden shadow-sm h-[400px]">
+          {/* Right Column: Map */}
+          <div className="rounded-xl overflow-hidden shadow-sm h-72 sm:h-96 md:h-[400px] w-full">
             <MapView properties={filteredProperties} />
           </div>
         </div>
+
 
         {/* Property Cards */}
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 pb-12">
