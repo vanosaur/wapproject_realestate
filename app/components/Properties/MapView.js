@@ -1,7 +1,7 @@
 "use client";
+import "app/utils/fixLeafletIcon";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import "app/utils/fixLeafletIcon";
 
 const MapView = ({ properties }) => {
   const defaultPosition = [19.0760, 72.8777]; // Default to Mumbai

@@ -1,11 +1,10 @@
 import React, { Suspense } from 'react';
 import Properties from 'app/components/Properties/PropertiesPage'
-import PriceFilter from "../components/Properties/PriceFilter";
 
 
 function page() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>Loading properties...</div>}>
       <Properties />
     </Suspense>
   )
