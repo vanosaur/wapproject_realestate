@@ -4,12 +4,13 @@ import React, { useState } from 'react'
 import Navbar from '../homepage/Navbar'
 import { Mail, MapPin, Phone } from 'lucide-react';
 import Footer from '../homepage/Footer';
+import FadeInWrapper from '../FadeInWrapper';
 
 function contactpage() {
   return (
     <div>
         <Navbar/>
-
+        <FadeInWrapper>
         <div className="flex flex-col items-center justify-center py-35 bg-blue-100">
         <div className="w-full max-w-lg bg-white p-8 rounded-lg shadow-md text-center">
             <h1 className="text-4xl font-bold mb-4 text-black">Contact Us</h1>
@@ -82,6 +83,7 @@ function contactpage() {
             </div>
         </section>
         <Footer />
+        </FadeInWrapper>
     </div>
   )
 }

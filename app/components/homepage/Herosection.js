@@ -1,18 +1,32 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import Navbar from './Navbar';
 
 function SearchBar() {
+  const [query, setQuery] = useState('');
+  const router = useRouter();
+
+  const handleSearch = () => {
+    if (query.trim() !== '') {
+      router.push(`/properties?location=${encodeURIComponent(query.trim())}`);
+    }
+  };
+
   return (
     <div className="flex w-full max-w-lg bg-white rounded-full shadow-md overflow-hidden">
       <input
         type="text"
         placeholder="Enter location..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
         className="flex-1 px-5 py-3 outline-none text-sm text-gray-700"
       />
-      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-sm font-semibold">
+      <button
+        onClick={handleSearch}
+        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-sm font-semibold"
+      >
         Search
       </button>
     </div>

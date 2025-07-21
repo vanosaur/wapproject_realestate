@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Footer from '../homepage/Footer';
 import Navbar from '../homepage/Navbar';
 import { Clock, User ,ArrowDown} from 'lucide-react'; 
+import FadeInWrapper from '../FadeInWrapper';
 
 function Blogpage() {
     const blogPosts = [
@@ -55,6 +56,7 @@ function Blogpage() {
     <div>
       <Navbar />
 
+      <FadeInWrapper>
       <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -114,7 +116,7 @@ function Blogpage() {
     </div>
     </section>
     <Footer />
-
+    </FadeInWrapper>
     </div>
     )  
     }

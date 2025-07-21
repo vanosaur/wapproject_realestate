@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Target, Eye ,Shield, CircleCheckBig, Clock, Linkedin, Twitter, Instagram , Home, Globe, Headphones, List } from 'lucide-react';
 import Footer from '../homepage/Footer';
 import Navbar from '../homepage/Navbar';
+import FadeInWrapper from '../FadeInWrapper';
 
 function TestPage() {
   const features = [
@@ -33,7 +34,7 @@ function TestPage() {
   return (
     <div>
       <Navbar />
-      
+      <FadeInWrapper>
       <div className="relative h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 z-0 opacity-60">
@@ -261,8 +262,9 @@ function TestPage() {
     </section>
 
     <Footer />
-
+      </FadeInWrapper>
       </div>
+      
   );
 }
 

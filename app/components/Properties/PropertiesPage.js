@@ -7,7 +7,8 @@ import Image from 'next/image';
 import mockProperties from 'app/data/mockproperties';
 import PriceFilter from "app/components/Properties/PriceFilter";
 import dynamic from 'next/dynamic';
-
+import FadeInWrapper from '../FadeInWrapper';
+import { useSearchParams } from 'next/navigation';
 
 const MapView = dynamic(() => import("app/components/Properties/MapView"), { ssr: false });
 
@@ -19,6 +20,8 @@ function Properties() {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const propertiesPerPage = 6;
+  const searchParams = useSearchParams();
+  const locationParam = searchParams.get("location");
 
   const resetFilters = () => {
     setSearchText('');
@@ -28,7 +31,12 @@ function Properties() {
     setFilteredProperties(mockProperties);
   };
 
+
   useEffect(() => {
+
+    if (locationParam && !searchText) {
+      setSearchText(locationParam);
+    }
     const parsePrice = (priceStr) => parseInt(priceStr.replace(/[^0-9]/g, '')) || 0;
     const lowercasedSearchText = searchText.toLowerCase();
     const numericMin = parseInt(minPrice) || 0;
@@ -45,7 +53,7 @@ function Properties() {
       const withinRange = numericPrice >= numericMin && numericPrice <= numericMax;
 
       return matchesSearch && withinRange;
-    });
+    },[locationParam]);
 
     setCurrentPage(1);
     setFilteredProperties(newFilteredProperties);
@@ -79,7 +87,7 @@ function Properties() {
   return (
     <div className='bg-gray-50'>
       <Navbar />
-
+      <FadeInWrapper>
       <div className='pt-36 pb-12'>
         <h1 className='text-5xl font-extrabold text-center text-black mb-4'>Find Your Ideal Property</h1>
         <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-6 rounded-full"></div>
@@ -234,6 +242,7 @@ function Properties() {
       </div>
 
       <Footer />
+      </FadeInWrapper>
     </div>
   );
 }
