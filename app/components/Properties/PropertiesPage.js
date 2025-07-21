@@ -33,10 +33,10 @@ function Properties() {
 
 
   useEffect(() => {
-
     if (locationParam && !searchText) {
       setSearchText(locationParam);
     }
+
     const parsePrice = (priceStr) => parseInt(priceStr.replace(/[^0-9]/g, '')) || 0;
     const lowercasedSearchText = searchText.toLowerCase();
     const numericMin = parseInt(minPrice) || 0;
@@ -53,11 +53,12 @@ function Properties() {
       const withinRange = numericPrice >= numericMin && numericPrice <= numericMax;
 
       return matchesSearch && withinRange;
-    },[locationParam]);
+    });
 
     setCurrentPage(1);
     setFilteredProperties(newFilteredProperties);
-  }, [searchText, minPrice, maxPrice]);
+  }, [searchText, minPrice, maxPrice, locationParam]);
+
 
   const handleSearchChange = (e) => {
     setSearchText(e.target.value);
