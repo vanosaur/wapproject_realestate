@@ -1,17 +1,42 @@
+'use client'; // only if you're in the /app directory
+
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { auth } from '../../../lib/firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { useEffect} from 'react';
+
+
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
 
 function RegisterForm({ closeModal }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  
+  
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
-    console.log({ name, email, password });
-    alert('Account created');
+const handleRegister = async (e) => {
+  e.preventDefault();
+  try {
+    const userCred = await createUserWithEmailAndPassword(auth, email, password);
+
+    await updateProfile(userCred.user, {
+      displayName: name,
+      photoURL: "/images/pfp.png", // your shared profile picture
+    });
+
+    alert('Registration successful!');
     closeModal();
-  };
+  } catch (err) {
+    alert(err.message);
+  }
+};
+
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
@@ -83,6 +108,29 @@ function Navbar() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+      alert('Login successful!');
+      setIsLoginOpen(false);
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
   return (
     <div>
       <nav className="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-black/40 backdrop-blur-md z-50">
@@ -108,6 +156,28 @@ function Navbar() {
         </button>
 
         {/* Auth Buttons */}
+        {currentUser ? (
+        <div className="hidden md:flex items-center space-x-3 text-white">
+         <img
+          src={
+            currentUser?.photoURL && currentUser.photoURL !== 'null'
+              ? currentUser.photoURL
+              : '/images/pfp.png'
+          }
+          alt="Avatar"
+          className="w-8 h-8 rounded-full object-cover"
+        />
+
+
+          <span className="text-sm">{currentUser.displayName || 'User'}</span>
+          <button
+            onClick={() => signOut(auth)}
+            className="text-sm text-white hover:underline"
+          >
+            Logout
+          </button>
+        </div>
+      ) : (
         <div className="hidden md:flex items-center space-x-4">
           <button
             id="open-login"
@@ -129,7 +199,9 @@ function Navbar() {
             Get started
           </button>
         </div>
+      )}
       </nav>
+
 
       {/* Mobile Nav Dropdown */}
       {mobileMenuOpen && (
@@ -179,7 +251,7 @@ function Navbar() {
             <p className="text-gray-600 mb-4 text-sm">
               Welcome back!<br /> Please Sign in to your account.
             </p>
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="text-left mb-2">
                 <label className="text-black">Email:</label>
               </div>
@@ -187,6 +259,9 @@ function Navbar() {
                 type="email"
                 placeholder="Email"
                 className="w-full mb-3 px-4 py-2 border rounded"
+                value={loginEmail}
+                onChange={(e) => setLoginEmail(e.target.value)}
+                required
               />
               <div className="text-left mb-2">
                 <label className="text-black">Password:</label>
@@ -195,6 +270,9 @@ function Navbar() {
                 type="password"
                 placeholder="Password"
                 className="w-full mb-4 px-4 py-2 border rounded"
+                value={loginPassword}
+                onChange={(e) => setLoginPassword(e.target.value)}
+                required
               />
               <button
                 type="submit"
